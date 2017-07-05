@@ -21,7 +21,7 @@ def inner(_it, _timer{init}):
 
         t = timeit.Timer(lambda: fn(*args, **kwargs))
         runs = 10
-        time, result = t.timeit(number=runs)
-        print("@timefn:" + fn.__name__ + " took an average of " + str(time / runs) + " seconds per run for " + str(runs) + " runs.")
+        exec_time, result = t.timeit(number=runs)
+        print("@timefn:" + fn.__name__ + " took an average of " + str(exec_time / runs) + " seconds per run for " + str(runs) + " runs.")
         return result
     return measure_time
